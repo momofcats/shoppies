@@ -1,0 +1,30 @@
+.searchBar {
+    display: flex;
+    background-color: #FFF;
+    padding: 20px 50px;
+    border: 2px solid #c9c2c2;
+    flex-direction: column;
+    position: relative;
+}
+.searchBar__container {
+    display: flex;
+    border: 2px solid #c9c2c2;
+    height: 45px;
+}
+
+.searchBar__input {
+    width: 100%;
+    border: none;
+    font-size: 12px;
+    
+}
+
+.searchBar__input:focus {
+    border: none;
+}
+
+.searchBar__btn {
+    background: transparent;
+    border-style: none;
+    color:#878181;
+}
