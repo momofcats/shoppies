@@ -4,7 +4,6 @@
     padding: 20px 50px;
     border: 2px solid #c9c2c2;
     flex-direction: column;
-    position: relative;
 }
 .searchBar__container {
     display: flex;
