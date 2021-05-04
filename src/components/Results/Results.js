@@ -8,6 +8,7 @@ import "./Results.css";
 // ];
 
 function Results({ movies, keyword}) {
+    
     return (
         <div className="results">
             <h4 className="results__title">
@@ -15,7 +16,7 @@ function Results({ movies, keyword}) {
             </h4>
             <ul className="results__list">
                 {movies.map((item) => {
-                   return <li className="results__item" key={item.imbdID}>{item.Title} ({item.Year})
+                   return <li className="results__item" key={item.imdbID}>{item.Title} ({item.Year})
                    <button className="results__btn">Nominate</button>
                    </li>
                 })}

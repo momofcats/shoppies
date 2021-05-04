@@ -2,12 +2,12 @@ import React, {useState} from "react";
 import SearchIcon from "@material-ui/icons/Search";
 import "./SearchBar.css";
 
-function SearchBar(props) {
+function SearchBar({ onSearch, message}) {
   const [value, setValue] = useState("")
 
   function handleSubmit(e) {
     e.preventDefault();
-    props.onSearch(value);
+    onSearch(value);
   }
 
   function handleChange(e) {
@@ -22,9 +22,10 @@ function SearchBar(props) {
           <button className="searchBar__btn">
             <SearchIcon />
           </button>
-          <input className="searchBar__input" onChange={handleChange}></input>
+          <input className="searchBar__input" onChange={handleChange} placeholder="Search movies..."></input>
         </div>
       </form>
+      <div className="searchBar__error">{message}</div>
     </div>
   );
 }

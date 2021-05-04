@@ -27,3 +27,7 @@
     border-style: none;
     color:#878181;
 }
+
+.searchBar__error {
+    color: red;
+}
