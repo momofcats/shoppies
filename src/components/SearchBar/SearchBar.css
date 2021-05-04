@@ -1,7 +1,7 @@
 .searchBar {
     display: flex;
     background-color: #FFF;
-    padding: 20px 50px;
+    padding: 20px;
     border: 2px solid #c9c2c2;
     flex-direction: column;
 }

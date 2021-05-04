@@ -4,6 +4,13 @@ body {
 
 
 .App {
-  margin: 80px 150px;
+  max-width: 960px;
+  margin: 50px auto;
   
+}
+
+@media screen and (max-width: 1000px) {
+  .App {
+    margin: 20px;
+  }
 }
