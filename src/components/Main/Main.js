@@ -3,10 +3,10 @@ import './Main.css';
 import Results from "../Results/Results";
 import Nominations from "../Nominations/Nominations";
 
-function Main() {
+function Main({ movies, keyword }) {
     return (
         <section className="main">
-            <Results />
+            {movies.length > 0 && <Results movies={movies} keyword={keyword}/>}
             <Nominations />
         </section>
     )
