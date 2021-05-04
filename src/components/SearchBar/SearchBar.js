@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import SearchIcon from "@material-ui/icons/Search";
 import "./SearchBar.css";
 
-function SearchBar({ onSearch, message}) {
+function SearchBar({ onSearch, message, handleErrorMessage}) {
   const [value, setValue] = useState("")
 
   function handleSubmit(e) {
@@ -11,6 +11,7 @@ function SearchBar({ onSearch, message}) {
   }
 
   function handleChange(e) {
+    handleErrorMessage();
     setValue(e.target.value);
   }
 

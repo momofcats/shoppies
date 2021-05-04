@@ -46,7 +46,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <SearchBar onSearch={handleMovieSearch} message={errorMessage}/>
+      <SearchBar onSearch={handleMovieSearch} message={errorMessage} handleErrorMessage={() => setErrorMessage("")}/>
       <Main movies={movies} keyword={keyword}/>
     </div>
   );
