@@ -5,7 +5,10 @@ import '../Results/Results.css';
 //     {title: "Hey Ram", year: "2000", imbdID: "tt0222013"}, 
 //     {title: "Ram Dass Going Home", year: "2017", imbdID: "tt0222011"}
 // ];
-function Nominations({nominations}) {
+function Nominations({nominations, onRemoveClick}) {
+    function handleClick(item) {
+        onRemoveClick(item);
+    }
     return (
         <div className="results">
         <h4 className="results__title">
@@ -14,7 +17,7 @@ function Nominations({nominations}) {
         <ul className="results__list">
             {nominations.map((item) => {
                return <li className="results__item" key={item.imdbID}>{item.Title} ({item.Year})
-               <button className="results__btn">Remove</button>
+               <button className="results__btn" onClick={()=>handleClick(item)}>Remove</button>
                </li>
             })}
         </ul>

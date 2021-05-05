@@ -44,16 +44,21 @@ function App() {
       .catch((err) => console.log(err));
   }
 
-  function nominate(movie) {
+  function handleNominateClick(movie) {
     console.log(movie);
     setNominations([...nominations, movie]);
 
+  }
+
+  function handleRemoveClick(movie) {
+    const newNominations = nominations.filter(item => item.imdbID !== movie.imdbID);
+    setNominations(newNominations);
   }
   return (
     <div className="App">
       <Header />
       <SearchBar onSearch={handleMovieSearch} message={errorMessage} handleErrorMessage={() => setErrorMessage("")}/>
-      <Main movies={movies} keyword={keyword} nominate={nominate} nominations={nominations}/>
+      <Main movies={movies} keyword={keyword} onNominate={handleNominateClick} nominations={nominations} onRemoveClick={handleRemoveClick}/>
     </div>
   );
 }

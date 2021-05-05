@@ -1,9 +1,9 @@
 import React from "react";
 import "./Results.css";
 
-function Results({ movies, keyword, nominate}) {
+function Results({ movies, keyword, onNominate}) {
 function handleClick(item) {
-    nominate(item);
+    onNominate(item);
 }
     return (
         <div className="results">
