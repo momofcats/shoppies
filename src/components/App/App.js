@@ -38,6 +38,7 @@ function App() {
       } else {
         film.isNominated = false;
       }
+      return film;
     });
     return arr1;
   }
