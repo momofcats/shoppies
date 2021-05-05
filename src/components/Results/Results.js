@@ -13,7 +13,7 @@ function handleClick(item) {
             <ul className="results__list">
                 {movies.map((item) => {
                    return <li className="results__item" key={item.imdbID}>{item.Title} ({item.Year})
-                   <button type="button" className={`results__btn ${item.isNominated ? "results__btn_disabled" : ""}`} onClick={() => handleClick(item)}>Nominate</button>
+                   <button type="button" disabled={item.isNominated} className={`results__btn ${item.isNominated ? "results__btn_disabled" : ""}`} onClick={() => handleClick(item)}>Nominate</button>
                    </li>
                 })}
             </ul>

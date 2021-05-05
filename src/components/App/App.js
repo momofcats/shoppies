@@ -35,6 +35,8 @@ function App() {
     arr1.map((film) => {
       if (film.imdbID in map) {
         film.isNominated = true;
+      } else {
+        film.isNominated = false;
       }
     });
     return arr1;
@@ -62,6 +64,7 @@ function App() {
   }
 
   function handleNominateClick(movie) {
+    movie.isNominated = true;
     console.log(movie);
     setNominations([...nominations, movie]);
     localStorage.setItem(
@@ -76,6 +79,8 @@ function App() {
     );
     setNominations(newNominations);
     localStorage.setItem("nominatedMovies", JSON.stringify(newNominations));
+    const films = findNominatedFilms(movies, newNominations);
+    setMovies(films);
   }
 
   useEffect(() => {
@@ -84,6 +89,7 @@ function App() {
       setNominations(nominatedMovies);
     }
   }, []);
+
   return (
     <div className="App">
       <Header />
