@@ -20,7 +20,7 @@ function SearchBar({ onSearch, message, handleErrorMessage}) {
       <h4 className="searchBar__title">Movie title</h4>
       <form onSubmit={handleSubmit}>
         <div className="searchBar__container">
-          <button className="searchBar__btn">
+          <button type="submit" className="searchBar__btn">
             <SearchIcon />
           </button>
           <input className="searchBar__input" onChange={handleChange} placeholder="Search movies..."></input>

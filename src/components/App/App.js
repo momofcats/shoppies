@@ -7,6 +7,7 @@ import omdbApi from "../../utils/api";
 
 function App() {
   const [movies, setMovies] = useState([]);
+  const [nominations, setNominations] = useState([]);
   const [keyword, setKeyword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
@@ -43,11 +44,16 @@ function App() {
       .catch((err) => console.log(err));
   }
 
+  function nominate(movie) {
+    console.log(movie);
+    setNominations([...nominations, movie]);
+
+  }
   return (
     <div className="App">
       <Header />
       <SearchBar onSearch={handleMovieSearch} message={errorMessage} handleErrorMessage={() => setErrorMessage("")}/>
-      <Main movies={movies} keyword={keyword}/>
+      <Main movies={movies} keyword={keyword} nominate={nominate} nominations={nominations}/>
     </div>
   );
 }
