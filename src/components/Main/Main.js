@@ -7,7 +7,7 @@ function Main({ movies, keyword, nominations, onNominate, onRemoveClick }) {
     return (
         <section className="main">
             {movies.length > 0 && <Results movies={movies} keyword={keyword} onNominate={onNominate} />}
-            <Nominations nominations={nominations} onRemoveClick={onRemoveClick}/>
+            {nominations.length > 0 && <Nominations nominations={nominations} onRemoveClick={onRemoveClick}/>}
         </section>
     )
 }
