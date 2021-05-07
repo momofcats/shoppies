@@ -52,21 +52,18 @@ function App() {
         if (res.Error) {
           setErrorMessage(res.Error);
           setMovies([]);
-          console.log(res.Error);
         } else {
           let data = res.Search;
           data = removeDublicates(data);
           const films = findNominatedFilms(data, nominations);
           setMovies(films);
-          console.log(films);
         }
       })
-      .catch((err) => console.log(err));
+      .catch((err) => setErrorMessage(err));
   }
 
   function handleNominateClick(movie) {
     movie.isNominated = true;
-    console.log(movie);
     setNominations([...nominations, movie]);
     localStorage.setItem(
       "nominatedMovies",

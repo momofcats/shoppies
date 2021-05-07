@@ -1,10 +1,3 @@
-// function searchMovie(searchQuerry) {
-// return fetch(`http://www.omdbapi.com/?s=${searchQuerry}&Search&page=10&apikey=507284`)
-// .then(response => response.json())
-// .then(data => console.log(data[Search]));
-// }
-
-// export default searchMovie;
 
 class MoviesApi {
     constructor(options) {
@@ -28,7 +21,7 @@ class MoviesApi {
 }
 
 const omdbApi = new MoviesApi({
-    baseUrl: "http://www.omdbapi.com/",
+    baseUrl: "https://www.omdbapi.com/",
 });
 
 export default omdbApi;
