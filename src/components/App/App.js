@@ -4,6 +4,7 @@ import Header from "../Header/Header";
 import SearchBar from "../SearchBar/SearchBar";
 import Main from "../Main/Main";
 import omdbApi from "../../utils/api";
+import Banner from "../Banner/Banner";
 
 function App() {
   const [movies, setMovies] = useState([]);
@@ -26,12 +27,11 @@ function App() {
 
   // finds films that are already nominated
   function findNominatedFilms(arr1, arr2) {
-    let map = arr2
-      .reduce((acc, currentVal) => {
-        let id = currentVal.imdbID
-        acc[id] = true;
-        return acc;
-      }, {});
+    let map = arr2.reduce((acc, currentVal) => {
+      let id = currentVal.imdbID;
+      acc[id] = true;
+      return acc;
+    }, {});
     arr1.map((film) => {
       if (film.imdbID in map) {
         film.isNominated = true;
@@ -93,6 +93,7 @@ function App() {
 
   return (
     <div className="App">
+      {nominations.length >= 5 && <Banner counter={nominations.length} />}
       <Header />
       <SearchBar
         onSearch={handleMovieSearch}

@@ -1,0 +1,21 @@
+.banner {
+  position: relative;
+}
+
+.banner__img {
+  width: 100%;
+  height: auto;
+}
+
+.banner__text {
+  font-size: 65px;
+  position: absolute;
+  top: 40%;
+  left: 5%;
+}
+
+@media screen and (max-width: 992px) {
+  .banner__text {
+    font-size: 6vw;
+  }
+}
